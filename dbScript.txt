@@ -1,0 +1,69 @@
+
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[tbl_country](
+	[countryId] [int] IDENTITY(1,1) NOT NULL,
+	[countryName] [nvarchar](50) NULL,
+ CONSTRAINT [PK_tbl_country] PRIMARY KEY CLUSTERED 
+(
+	[countryId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[tbl_state]    Script Date: 4/10/2021 6:05:42 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[tbl_state](
+	[stateId] [int] IDENTITY(1,1) NOT NULL,
+	[stateName] [nvarchar](50) NULL,
+	[countryId] [int] NULL,
+ CONSTRAINT [PK_tbl_state] PRIMARY KEY CLUSTERED 
+(
+	[stateId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[tbl_country] ON 
+
+INSERT [dbo].[tbl_country] ([countryId], [countryName]) VALUES (1, N'India')
+INSERT [dbo].[tbl_country] ([countryId], [countryName]) VALUES (2, N'United States')
+INSERT [dbo].[tbl_country] ([countryId], [countryName]) VALUES (3, N'United Kingdom')
+INSERT [dbo].[tbl_country] ([countryId], [countryName]) VALUES (4, N'Japan')
+SET IDENTITY_INSERT [dbo].[tbl_country] OFF
+GO
+SET IDENTITY_INSERT [dbo].[tbl_state] ON 
+
+INSERT [dbo].[tbl_state] ([stateId], [stateName], [countryId]) VALUES (1, N'Delhi', 1)
+INSERT [dbo].[tbl_state] ([stateId], [stateName], [countryId]) VALUES (2, N'Maharashtra', 1)
+INSERT [dbo].[tbl_state] ([stateId], [stateName], [countryId]) VALUES (3, N'Tamil Nadu', 1)
+INSERT [dbo].[tbl_state] ([stateId], [stateName], [countryId]) VALUES (4, N'Uttar Pradesh', 1)
+INSERT [dbo].[tbl_state] ([stateId], [stateName], [countryId]) VALUES (5, N'Gujarat', 1)
+INSERT [dbo].[tbl_state] ([stateId], [stateName], [countryId]) VALUES (6, N'West Bengal', 1)
+INSERT [dbo].[tbl_state] ([stateId], [stateName], [countryId]) VALUES (7, N'
+Washington', 2)
+INSERT [dbo].[tbl_state] ([stateId], [stateName], [countryId]) VALUES (8, N'Minnesota', 2)
+INSERT [dbo].[tbl_state] ([stateId], [stateName], [countryId]) VALUES (9, N'
+Utah', 2)
+INSERT [dbo].[tbl_state] ([stateId], [stateName], [countryId]) VALUES (10, N'Florida', 2)
+INSERT [dbo].[tbl_state] ([stateId], [stateName], [countryId]) VALUES (11, N'Virginia', 2)
+INSERT [dbo].[tbl_state] ([stateId], [stateName], [countryId]) VALUES (12, N'Massachusetts', 2)
+INSERT [dbo].[tbl_state] ([stateId], [stateName], [countryId]) VALUES (13, N'Birmingham', 3)
+INSERT [dbo].[tbl_state] ([stateId], [stateName], [countryId]) VALUES (14, N'Nottingham', 3)
+INSERT [dbo].[tbl_state] ([stateId], [stateName], [countryId]) VALUES (15, N'Manchester', 3)
+INSERT [dbo].[tbl_state] ([stateId], [stateName], [countryId]) VALUES (16, N'Edinburgh', 3)
+INSERT [dbo].[tbl_state] ([stateId], [stateName], [countryId]) VALUES (17, N'London', 3)
+INSERT [dbo].[tbl_state] ([stateId], [stateName], [countryId]) VALUES (18, N'Yokohama', 4)
+INSERT [dbo].[tbl_state] ([stateId], [stateName], [countryId]) VALUES (19, N'Nagoya', 4)
+INSERT [dbo].[tbl_state] ([stateId], [stateName], [countryId]) VALUES (20, N'Kyoto', 4)
+INSERT [dbo].[tbl_state] ([stateId], [stateName], [countryId]) VALUES (21, N'Nara', 4)
+INSERT [dbo].[tbl_state] ([stateId], [stateName], [countryId]) VALUES (22, N'Osaka', 4)
+INSERT [dbo].[tbl_state] ([stateId], [stateName], [countryId]) VALUES (23, N'Kobe', 4)
+INSERT [dbo].[tbl_state] ([stateId], [stateName], [countryId]) VALUES (24, N'Hiroshima', 4)
+SET IDENTITY_INSERT [dbo].[tbl_state] OFF
+
+GO
+
+select*from tbl_country;
+select*from tbl_state;
